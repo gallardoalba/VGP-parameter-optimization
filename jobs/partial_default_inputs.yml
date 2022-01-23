@@ -1,0 +1,24 @@
+PBCSTAT.tabular:
+  class: File
+  # location: https://zenodo.org/record/5894984/files/PBCSTAT_correct.tabular?download=1
+  galaxy_id: 11ac94870d0bb33a41277ff6a1ea433a
+assembly.fasta:
+  class: File
+  # location: https://zenodo.org/record/5894984/files/assembly.fasta?download=1
+  galaxy_id: 11ac94870d0bb33a11fbe86af2a1760e
+calcuts.tabular:
+  class: File
+  # location: https://zenodo.org/record/5894984/files/calcuts_correct.tabular?download=1
+  galaxy_id: 11ac94870d0bb33a9b7754f91be6161c
+hifi_reads.fastqsanger.gz:
+  class: File
+  # location: https://zenodo.org/record/5894984/files/hifi_reads.fastqsanger.gz?download=1
+  galaxy_id: 11ac94870d0bb33a41bca2d9ba33683c
+reads.meryldb:
+  class: File
+  # location: https://zenodo.org/record/5894984/files/reads.meryldb?download=1
+  galaxy_id: 11ac94870d0bb33a6441d03a5d93d477
+self_homologus_map.paf:
+  class: File
+  # location: https://zenodo.org/record/5894984/files/self_homologus_map.paf?download=1
+  galaxy_id: 11ac94870d0bb33aefaf14069f8a5ee0

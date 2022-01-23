@@ -1,1 +1,2 @@
-# VGP_parameter_optimization
+# VGP parameter optimization
+
