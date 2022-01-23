@@ -9,7 +9,7 @@ It includes the [full post-assembly pipeline](https://training.galaxyproject.org
 - Workflow ID: 69be0fb8276753ec
     
 - Input files:
-  - Hi-Fi reads
+  - Pacbio HiFi reads
   - Draft assembly
   - K-mer database
 
