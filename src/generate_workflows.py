@@ -12,7 +12,8 @@ output_folder = sys.argv[4]
 
 
 def main():
-    
+    if not path.exists(output_folder):
+        mkdir(output_folder)
     config_raw = open(config_file).readlines()[1:]
     config = {}
     for i in config_raw:
