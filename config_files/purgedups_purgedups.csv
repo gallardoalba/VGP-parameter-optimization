@@ -1,0 +1,8 @@
+option,type,default,min,max
+min_bad,float,0.8,0,1
+min_align,int,70,0,300
+min_match,int,200,0,500
+min_chain,int,500,0,1000
+max_gap,int,20000,0,50000
+min_chain_score,int,10000,0,20000
+max_extend,int,15000,0,40000
