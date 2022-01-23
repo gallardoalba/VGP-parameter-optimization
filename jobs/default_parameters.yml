@@ -1,0 +1,9 @@
+HiFi_collapsed.fastqsanger.gz:
+  class: File
+  path: todo_test_data_path.ext
+assembly.fasta:
+  class: File
+  path: todo_test_data_path.ext
+reads.meryldb:
+  class: File
+  path: todo_test_data_path.ext

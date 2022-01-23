@@ -1,0 +1,15 @@
+Assembly	Purge_overlaps_on_data_24_and_data_1__get_seqs_purged_sequences
+# contigs (>= 0 bp)	2
+# contigs (>= 1000 bp)	2
+Total length (>= 0 bp)	28986
+Total length (>= 1000 bp)	28986
+# contigs	2
+Largest contig	16332
+Total length	28986
+Estimated reference length	12664060
+GC (%)	20.84
+N50	16332
+N75	12654
+L50	1
+L75	2
+# N's per 100 kbp	0.00
