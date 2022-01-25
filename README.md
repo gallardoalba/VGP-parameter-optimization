@@ -21,7 +21,6 @@ $ ./HIsim ./GCF_000146045.2_R64_genomic.fasta ./synthetic.model -p.2,.2 -c50 -r1
 It includes the [full post-assembly pipeline](https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html#post-assembly-processing): read-depth analysis, generation of all versus all self-alignment and resolution of haplotigs and overlaps. In addition, it runs QUAST and Merqury both at the beginning and the end.
 
 - Workflow ID: 08e65ff9a4f1ebb1
-    
 - Input files:
   - Pacbio HiFi reads
   - Draft assembly
