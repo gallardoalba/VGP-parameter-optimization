@@ -1,0 +1,16 @@
+PBCSTAT.tabular:
+  class: File
+  #path: PBCSTAT.tabular
+  galaxy_id: 2f94e8ae9edff68a
+calcuts.tabular:
+  class: File
+  #path: calcuts.tabular
+  galaxy_id: 8237ee2988567c1c
+self_homologus_map.paf:
+  class: File
+  #path: self_homologus_map.paf
+  galaxy_id: f09437b8822035f7
+assembly.fasta:
+  class: File
+  #path: assembly.fasta
+  galaxy_id: fb85969571388350
