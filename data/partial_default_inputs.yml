@@ -12,4 +12,4 @@ self_homologus_map.paf:
   galaxy_id: 11ac94870d0bb33aefaf14069f8a5ee0
 assembly.fasta:
   class: File
-  galaxy_id: 11ac94870d0bb33aa7911f2329945a48
+  galaxy_id: 11ac94870d0bb33ae9bd049768be22fe
