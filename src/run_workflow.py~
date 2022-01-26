@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+
+workflows_folder = "../workflows/"
+
+if __name__ == "__main__":
+    main()
