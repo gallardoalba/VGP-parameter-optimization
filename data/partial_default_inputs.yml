@@ -10,3 +10,6 @@ self_homologus_map.paf:
   class: File
   # location: https://zenodo.org/record/5894984/files/self_homologus_map.paf?download=1
   galaxy_id: 11ac94870d0bb33aefaf14069f8a5ee0
+assembly.fasta:
+  class: File
+  galaxy_id: 11ac94870d0bb33aa7911f2329945a48

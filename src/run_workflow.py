@@ -9,12 +9,13 @@ from subprocess import Popen, PIPE
 def launch_planemo(RUN,LOG):
     process = Popen(RUN, stdout=PIPE)
     output, error = process.communicate()
-    open(LOG,"a").write(output)            
+    if error:
+        open(LOG,"a").write(error)            
 
 def generate_RUNS(LOG):
     WORKFLOWS_FOLDER = "../workflows/"
-    DATA = "../data/partial_default_inputs_local.yml"
-    CMMD = 'planemo run {} {} --profile LOCAL --history_name {}'
+    DATA = "../data/partial_default_inputs.yml"
+    CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {} --output_directory {}'
     RUNS = []
     for root, dirs, files in walk(WORKFLOWS_FOLDER):
         if files:
@@ -22,7 +23,8 @@ def generate_RUNS(LOG):
             global workflow
             for workflow in workflows_paths:
                 HISTORY_NAME = workflow.split("/")[-1].strip(".ga")
-                OUTPUT_PATH = workflow.strip(".ga")
+                OUTPUT_PATH = ".." + workflow.strip(".ga")
+                OUTPUT_PATH = OUTPUT_PATH.replace("workflow","output")
                 if not path.isdir(OUTPUT_PATH):
                     makedirs(OUTPUT_PATH)
                 RUN = (CMMD.format(workflow,DATA,HISTORY_NAME,OUTPUT_PATH)).split(" ")
@@ -36,7 +38,6 @@ def main():
     processes = [Process(target=launch_planemo, args=(RUN, LOG,)) for RUN in RUNS]
     for p in processes: p.start()
     for p in processes: p.join()
-    print(yeah)
                 #process = Popen(RUN, stdout=PIPE)
                 #output, error = process.communicate()
 
