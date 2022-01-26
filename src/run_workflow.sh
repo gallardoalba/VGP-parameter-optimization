@@ -15,4 +15,4 @@ OUTDIR="../outputs/default_parameters/"
 
 #planemo run $WORKFLOW $DATA --download_outputs --profile EU --history_name "Test_optimization_WF" --tags "purgedups" --output_directory $OUTDIR
 
-planemo run $WORKFLOW $DATA --download_outputs --profile LOCAL --history_name "Test_optimization_WF" --tags "purgedups" --output_directory ./
+planemo -v run $WORKFLOW $DATA --download_outputs --profile LOCAL --history_name "Test_optimization_WF" --output_directory ../outputs/

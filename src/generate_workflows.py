@@ -25,7 +25,10 @@ def main():
         config[entry[0]]["max"] = entry[4]
 
     workflow = json.load(open(workflow_file))
-    purgedups_json = json.loads(workflow["steps"]["6"]["tool_state"])
+    if "purgedups_getseqs" in config_file:
+        purgedups_json = json.loads(workflow["steps"]["4"]["tool_state"])
+    else:
+        purgedups_json = json.loads(workflow["steps"]["4"]["tool_state"])
     purgedups_params = purgedups_json["function_select"]
     for param in config.keys():
         if config[param]["type"] in ["int","float"]:
