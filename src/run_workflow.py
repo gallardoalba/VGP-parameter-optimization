@@ -16,8 +16,8 @@ def launch_planemo(RUN,LOG,SEMA):
 def generate_RUNS(LOG):
     WORKFLOWS_FOLDER = "../workflows/"
     DATA = "../data/partial_default_inputs.yml"
-    CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {} --output_directory {}'
-    ##CMMD = 'planemo run {} {} --profile EU --history_name {} --no_wait'
+    #CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {} --output_directory {}'
+    CMMD = 'planemo run {} {} --profile EU --history_name {} --no_wait'
     RUNS = []
     for root, dirs, files in walk(WORKFLOWS_FOLDER):
         if files:
@@ -39,7 +39,7 @@ def main():
     RUNS = generate_RUNS(LOG)
     #for RUN in RUNS:
     #    launch_planemo(RUN, LOG)
-    nThreads = 50
+    nThreads = 200
     sema = Semaphore(nThreads)
     processes = [Process(target=launch_planemo, args=(RUN, LOG, sema)) for RUN in RUNS]
     for p in processes:
