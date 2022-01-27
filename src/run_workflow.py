@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 
-from os import walk,path,makedirs
+from os import walk,path,makedirs,listdir
 from multiprocessing import Process, Semaphore
 from subprocess import Popen, PIPE
-
+from time import sleep
 
 def launch_planemo(RUN,LOG,SEMA):
     process = Popen(RUN, stdout=PIPE)
@@ -29,9 +29,15 @@ def generate_RUNS(LOG):
                 OUTPUT_PATH = OUTPUT_PATH.replace("workflow","output")
                 if not path.isdir(OUTPUT_PATH):
                     makedirs(OUTPUT_PATH)
-                RUN = (CMMD.format(workflow,DATA,HISTORY_NAME,OUTPUT_PATH)).split(" ")
-                RUN = [x for x in RUN if x != ""]
-                RUNS.append(RUN)
+                else:
+                    FILES = listdir(OUTPUT_PATH)
+                    if len(FILES) < 2:
+                        RUN = (CMMD.format(workflow,DATA,HISTORY_NAME,OUTPUT_PATH))
+                        RUN = [x for x in RUN.split(" ") if x != ""]
+                        print(RUN)
+                        RUNS.append(RUN)
+    print("\n[x] {} workflows will be launched".format(RUNS))
+    sleep(2)
     return(RUNS)
 
 def main():
