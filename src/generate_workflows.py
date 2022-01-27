@@ -10,6 +10,33 @@ config_file = sys.argv[2]
 n = int(sys.argv[3]) # number 
 output_folder = sys.argv[4]
 
+def small_gnomo(purgedups_json,config,workflow,j):
+    purgedups_params = purgedups_json["function_select"]
+    for param in config.keys():
+        if config[param]["type"] in ["int","float"]:
+            min = int(config[param]["min"])
+            max = int(config[param]["max"])
+            if config[param]["type"] == "int":
+                range_values = [int(x) for x in ls(min,max,n)]
+            else:
+                range_values = [x for x in ls(min,max,n)]
+            states = []
+            for i in range_values:
+                purgedups_params[param] = str(i)
+                #workflow["steps"][j]["tool_state"]["function_select"] = json.dumps(purgedups_params)
+                    
+                print(dict(workflow["steps"][j]["tool_state"]))
+
+                filename = "{}_{}.ga".format(param,i)
+                param_folder = path.join(output_folder,param)
+                if not path.exists(param_folder):
+                    mkdir(param_folder)
+                fullpath = path.join(param_folder,filename)
+                output = json.dumps(workflow)
+                with open(fullpath,"w") as tmp:
+                    tmp.write(output)
+    print("oh,yeah!")
+        
 
 def main():
     if not path.exists(output_folder):
@@ -23,34 +50,18 @@ def main():
         config[entry[0]]["default"] = entry[2]
         config[entry[0]]["min"] = entry[3]
         config[entry[0]]["max"] = entry[4]
-
+        
     workflow = json.load(open(workflow_file))
-    if "purgedups_getseqs" in config_file:
-        purgedups_json = json.loads(workflow["steps"]["4"]["tool_state"])
-    else:
-        purgedups_json = json.loads(workflow["steps"]["4"]["tool_state"])
-    purgedups_params = purgedups_json["function_select"]
-    for param in config.keys():
-        if config[param]["type"] in ["int","float"]:
-            min = int(config[param]["min"])
-            max = int(config[param]["max"])
-            if config[param]["type"] == "int":
-                range_values = [int(x) for x in ls(min,max,n)]
-            else:
-                range_values = [x for x in ls(min,max,n)]
-            states = []
-            for i in range_values:
-                purgedups_params[param] = str(i)
-                workflow["steps"]["6"]["tool_state"] = json.dumps(purgedups_params)
-                filename = "{}_{}.ga".format(param,i)
-                param_folder = path.join(output_folder,param)
-                if not path.exists(param_folder):
-                    mkdir(param_folder)
-                fullpath = path.join(param_folder,filename)
-                output = json.dumps(workflow)
-                with open(fullpath,"w") as tmp:
-                    tmp.write(output)
+    for i in workflow["steps"]:
+        for j in i:
+            if workflow["steps"][j]["tool_state"] != "":
+                purgedups_json = json.loads(workflow["steps"][j]["tool_state"])
+                if "function_select" in purgedups_json:
+                    small_gnomo(purgedups_json,config,workflow,j)
 
+
+        
+    
 
 if __name__ == "__main__":
     main()

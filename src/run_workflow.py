@@ -30,13 +30,19 @@ def generate_RUNS(LOG):
                 if not path.isdir(OUTPUT_PATH):
                     makedirs(OUTPUT_PATH)
                 else:
-                    FILES = listdir(OUTPUT_PATH)
+                    FILES = [path.join(OUTPUT_PATH,x) for x in listdir(OUTPUT_PATH)]
                     if len(FILES) < 2:
                         RUN = (CMMD.format(workflow,DATA,HISTORY_NAME,OUTPUT_PATH))
                         RUN = [x for x in RUN.split(" ") if x != ""]
-                        print(RUN)
                         RUNS.append(RUN)
-    print("\n[x] {} workflows will be launched".format(RUNS))
+                    for f in FILES:
+                        size = path.getsize(f)
+                        if size != 837 and size != 12134118:
+                            RUN = (CMMD.format(workflow,DATA,HISTORY_NAME,OUTPUT_PATH))
+                            RUN = [x for x in RUN.split(" ") if x != ""]
+                            RUNS.append(RUN)
+                        
+    print("\n\n[x] {} workflows will be launched...".format(len(RUNS)))
     sleep(2)
     return(RUNS)
 
