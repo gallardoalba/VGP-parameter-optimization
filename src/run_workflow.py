@@ -2,21 +2,22 @@
 
 
 from os import walk,path,makedirs
-#from multiprocessing import Process
+from multiprocessing import Process, Semaphore
 from subprocess import Popen, PIPE
 
 
-def launch_planemo(RUN,LOG):
+def launch_planemo(RUN,LOG,SEMA):
     process = Popen(RUN, stdout=PIPE)
     output, error = process.communicate()
     if error:
-        open(LOG,"a").write(error)            
+        open(LOG,"a").write(error)
+    SEMA.release()
 
 def generate_RUNS(LOG):
     WORKFLOWS_FOLDER = "../workflows/"
     DATA = "../data/partial_default_inputs.yml"
-##    CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {} --output_directory {}'
-    CMMD = 'planemo run {} {} --profile EU --history_name {} --no_wait'
+    CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {} --output_directory {}'
+    ##CMMD = 'planemo run {} {} --profile EU --history_name {} --no_wait'
     RUNS = []
     for root, dirs, files in walk(WORKFLOWS_FOLDER):
         if files:
@@ -35,14 +36,18 @@ def generate_RUNS(LOG):
 
 def main():
     LOG = "../outputs/outputs.log"
-    RUNS = generate_RUNS(LOG)[:2]
-    for RUN in RUNS:
-        launch_planemo(RUN, LOG)
-    #processes = [Process(target=launch_planemo, args=(RUN, LOG,)) for RUN in RUNS]
-    #for p in processes: p.start()
-    #for p in processes: p.join()
-                #process = Popen(RUN, stdout=PIPE)
-                #output, error = process.communicate()
+    RUNS = generate_RUNS(LOG)
+    #for RUN in RUNS:
+    #    launch_planemo(RUN, LOG)
+    nThreads = 50
+    sema = Semaphore(nThreads)
+    processes = [Process(target=launch_planemo, args=(RUN, LOG, sema)) for RUN in RUNS]
+    for p in processes:
+        sema.acquire()
+        p.start()
+        
+    for p in processes: p.join()
+
 
 
 if __name__ == "__main__":

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/laptop/.local/lib/python3.8/site-packages/planemo/galaxy/activity.py", line 49, in execute
+    return _execute(ctx, config, runnable, job_path, **kwds)
+  File "/home/laptop/.local/lib/python3.8/site-packages/planemo/galaxy/activity.py", line 123, in _execute
+    job_dict, _, history_id = stage_in(ctx, runnable, config, job_path, **kwds)
+  File "/home/laptop/.local/lib/python3.8/site-packages/planemo/galaxy/activity.py", line 233, in stage_in
+    history_id = _history_id(user_gi, **kwds)
+  File "/home/laptop/.local/lib/python3.8/site-packages/planemo/galaxy/activity.py", line 626, in _history_id
+    history_id = gi.histories.create_history(history_name)["id"]
+  File "/usr/local/lib/python3.8/dist-packages/bioblend/galaxy/histories/__init__.py", line 37, in create_history
+    return self._post(payload)
+  File "/usr/local/lib/python3.8/dist-packages/bioblend/galaxy/client.py", line 172, in _post
+    return self.gi.make_post_request(url, payload=payload,
+  File "/usr/local/lib/python3.8/dist-packages/bioblend/galaxyclient.py", line 131, in make_post_request
+    raise ConnectionError("Unexpected HTTP status code: %s" % r.status_code,
+bioblend.ConnectionError: Unexpected HTTP status code: 500: {"err_msg": "Uncaught exception in exposed API method:", "err_code": 0}
