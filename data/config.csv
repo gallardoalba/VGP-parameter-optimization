@@ -1,0 +1,15 @@
+option,type,default,min,max
+coverage,bool,false,,
+haplotigs,bool,false,,
+length,int,10000,0,20000
+min_ratio,float,0.05,0,1
+end_trim,bool,true,,
+split,bool,false,,
+min_gap,int,10000,0,20000
+min_bad,float,0.8,0,1
+min_align,int,70,0,300
+min_match,int,200,0,500
+min_chain,int,500,0,1000
+max_gap,int,20000,0,50000
+min_chain_score,int,10000,0,20000
+max_extend,int,15000,0,40000

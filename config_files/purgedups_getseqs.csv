@@ -1,8 +1,0 @@
-option,type,default,min,max
-coverage,bool,false,,
-haplotigs,bool,false,,
-length,int,10000,0,20000
-min_ratio,float,0.05,0,1
-end_trim,bool,true,,
-split,bool,false,,
-min_gap,int,10000,0,20000

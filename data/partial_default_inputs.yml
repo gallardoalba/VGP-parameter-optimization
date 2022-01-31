@@ -1,15 +1,25 @@
 PBCSTAT.tabular:
   class: File
   # location: https://zenodo.org/record/5894984/files/PBCSTAT_correct.tabular?download=1
-  galaxy_id: 11ac94870d0bb33a41277ff6a1ea433a
+  galaxy_id: 11ac94870d0bb33a845bf1092995697a
 calcuts.tabular:
   class: File
   # location: https://zenodo.org/record/5894984/files/calcuts_correct.tabular?download=1
-  galaxy_id: 11ac94870d0bb33a9b7754f91be6161c
+  galaxy_id: 11ac94870d0bb33a5dcff9d96ef99704
 self_homologus_map.paf:
   class: File
   # location: https://zenodo.org/record/5894984/files/self_homologus_map.paf?download=1
-  galaxy_id: 11ac94870d0bb33aefaf14069f8a5ee0
+  galaxy_id: 11ac94870d0bb33a469d9058edc772b1
 assembly.fasta:
   class: File
-  galaxy_id: 11ac94870d0bb33a11fbe86af2a1760e
+  galaxy_id: 11ac94870d0bb33aa53274c9e8567c56
+length: 10000
+max_extend: 15000
+max_gap: 10000
+min_align: 70
+min_bad: 0.8
+min_chain: 500
+min_chain_score: 10000
+min_gap: 20000
+min_match: 200
+min_ratio: 0.05

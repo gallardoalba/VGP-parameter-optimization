@@ -1,0 +1,852 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "Crist\u00f3bal Gallardo Alba"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "CC-BY-4.0",
+    "name": "purge_dups no FASTA",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "PBCSTAT.tabular"
+                }
+            ],
+            "label": "PBCSTAT.tabular",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 77.546875,
+                "height": 82.171875,
+                "left": -119,
+                "right": 81,
+                "top": -4.625,
+                "width": 200,
+                "x": -119,
+                "y": -4.625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "66442a7c-b4d0-484e-986f-797aa0ff79df",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "calcuts.tabular"
+                }
+            ],
+            "label": "calcuts.tabular",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 197.546875,
+                "height": 82.171875,
+                "left": -119,
+                "right": 81,
+                "top": 115.375,
+                "width": 200,
+                "x": -119,
+                "y": 115.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "73df3355-41e2-4cce-b1cf-6f35c04f82cd",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "self_homologus_map.paf"
+                }
+            ],
+            "label": "self_homologus_map.paf",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": -42.453125,
+                "height": 82.171875,
+                "left": -119,
+                "right": 81,
+                "top": -124.625,
+                "width": 200,
+                "x": -119,
+                "y": -124.625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "6da507d9-9cf7-4a3c-b581-d5eb31196380",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "assembly.fasta"
+                }
+            ],
+            "label": "assembly.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 26.546875,
+                "height": 82.171875,
+                "left": 189,
+                "right": 389,
+                "top": -55.625,
+                "width": 200,
+                "x": 189,
+                "y": -55.625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "aa6e365e-29cf-4cc3-a052-1186fa84528b",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_ratio"
+                }
+            ],
+            "label": "min_ratio",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": -92.828125,
+                "height": 61.78125,
+                "left": 189,
+                "right": 389,
+                "top": -154.609375,
+                "width": 200,
+                "x": 189,
+                "y": -154.609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "00e1f5d9-2ea2-4479-b5be-88d006c551aa",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "max_extend"
+                }
+            ],
+            "label": "max_extend",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": -161.828125,
+                "height": 61.78125,
+                "left": -119,
+                "right": 81,
+                "top": -223.609375,
+                "width": 200,
+                "x": -119,
+                "y": -223.609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "decc4c39-4d91-47db-bb14-ed0cfa26bb97",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_bad"
+                }
+            ],
+            "label": "min_bad",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 297.15625,
+                "height": 61.78125,
+                "left": -119,
+                "right": 81,
+                "top": 235.375,
+                "width": 200,
+                "x": -119,
+                "y": 235.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "3ee7fbd5-78e7-4b6b-bcf3-3c69736cd447",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_align"
+                }
+            ],
+            "label": "min_align",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 396.15625,
+                "height": 61.78125,
+                "left": -119,
+                "right": 81,
+                "top": 334.375,
+                "width": 200,
+                "x": -119,
+                "y": 334.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "2f07e839-eb55-4821-a767-f40e2be1bf1a",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_match"
+                }
+            ],
+            "label": "min_match",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 495.15625,
+                "height": 61.78125,
+                "left": -119,
+                "right": 81,
+                "top": 433.375,
+                "width": 200,
+                "x": -119,
+                "y": 433.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "5da03a74-dfba-4bd4-b5aa-6e459be1af1e",
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 9,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_chain"
+                }
+            ],
+            "label": "min_chain",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 594.15625,
+                "height": 61.78125,
+                "left": -119,
+                "right": 81,
+                "top": 532.375,
+                "width": 200,
+                "x": -119,
+                "y": 532.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "95eaff89-8909-468c-86fd-e589b96134f1",
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 10,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "max_gap"
+                }
+            ],
+            "label": "max_gap",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 693.15625,
+                "height": 61.78125,
+                "left": -119,
+                "right": 81,
+                "top": 631.375,
+                "width": 200,
+                "x": -119,
+                "y": 631.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "06f7830f-6d36-4d21-b50e-ffaacccbf39c",
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 11,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "length"
+                }
+            ],
+            "label": "length",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 714.15625,
+                "height": 61.78125,
+                "left": 189,
+                "right": 389,
+                "top": 652.375,
+                "width": 200,
+                "x": 189,
+                "y": 652.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 2, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "6f6cf2dc-e8d6-4175-9288-88f5714c04c9",
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 12,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_chain_score"
+                }
+            ],
+            "label": "min_chain_score",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 812.546875,
+                "height": 82.171875,
+                "left": -119,
+                "right": 81,
+                "top": 730.375,
+                "width": 200,
+                "x": -119,
+                "y": 730.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "d7bb21b9-7a9b-4f87-8adc-ff4529042c3d",
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 13,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_gap"
+                }
+            ],
+            "label": "min_gap",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 813.15625,
+                "height": 61.78125,
+                "left": 189,
+                "right": 389,
+                "top": 751.375,
+                "width": 200,
+                "x": 189,
+                "y": 751.375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "044421d5-455a-488b-8804-e894be26aef9",
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/purge_dups/purge_dups/1.2.5+galaxy4",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "function_select|coverage": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "function_select|cutoffs": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "function_select|input": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "function_select|max_extend": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "function_select|max_gap": {
+                    "id": 10,
+                    "output_name": "output"
+                },
+                "function_select|min_align": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "function_select|min_bad": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "function_select|min_chain": {
+                    "id": 9,
+                    "output_name": "output"
+                },
+                "function_select|min_chain_score": {
+                    "id": 12,
+                    "output_name": "output"
+                },
+                "function_select|min_match": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Purge overlaps",
+                    "name": "function_select"
+                },
+                {
+                    "description": "runtime parameter for tool Purge overlaps",
+                    "name": "function_select"
+                },
+                {
+                    "description": "runtime parameter for tool Purge overlaps",
+                    "name": "function_select"
+                }
+            ],
+            "label": null,
+            "name": "Purge overlaps",
+            "outputs": [
+                {
+                    "name": "purge_dups_bed",
+                    "type": "bed"
+                }
+            ],
+            "position": {
+                "bottom": 614.578125,
+                "height": 550.203125,
+                "left": 189,
+                "right": 389,
+                "top": 64.375,
+                "width": 200,
+                "x": 189,
+                "y": 64.375
+            },
+            "post_job_actions": {
+                "HideDatasetActionpurge_dups_bed": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "purge_dups_bed"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/purge_dups/purge_dups/1.2.5+galaxy4",
+            "tool_shed_repository": {
+                "changeset_revision": "a315c25dc813",
+                "name": "purge_dups",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"function_select\": {\"functions\": \"purge_dups\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}, \"coverage\": {\"__class__\": \"RuntimeValue\"}, \"cutoffs\": {\"__class__\": \"RuntimeValue\"}, \"min_bad\": {\"__class__\": \"ConnectedValue\"}, \"min_align\": {\"__class__\": \"ConnectedValue\"}, \"min_match\": {\"__class__\": \"ConnectedValue\"}, \"min_chain\": {\"__class__\": \"ConnectedValue\"}, \"max_gap\": {\"__class__\": \"ConnectedValue\"}, \"double_chain\": {\"chaining_rounds\": \"one\", \"__current_case__\": 1}, \"min_chain_score\": {\"__class__\": \"ConnectedValue\"}, \"max_extend\": {\"__class__\": \"ConnectedValue\"}, \"log_file\": \"false\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.5+galaxy4",
+            "type": "tool",
+            "uuid": "98a387df-7a70-4815-911c-5ebe87be3688",
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/purge_dups/purge_dups/1.2.5+galaxy4",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "function_select|advanced_options|length": {
+                    "id": 11,
+                    "output_name": "output"
+                },
+                "function_select|advanced_options|min_gap": {
+                    "id": 13,
+                    "output_name": "output"
+                },
+                "function_select|advanced_options|min_ratio": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "function_select|bed_input": {
+                    "id": 14,
+                    "output_name": "purge_dups_bed"
+                },
+                "function_select|fasta_input": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Purge overlaps",
+                    "name": "function_select"
+                },
+                {
+                    "description": "runtime parameter for tool Purge overlaps",
+                    "name": "function_select"
+                }
+            ],
+            "label": "Purged_assembly.FASTA",
+            "name": "Purge overlaps",
+            "outputs": [
+                {
+                    "name": "get_seqs_hap",
+                    "type": "fasta"
+                },
+                {
+                    "name": "get_seqs_purged",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "bottom": 574.015625,
+                "height": 428.640625,
+                "left": 477,
+                "right": 677,
+                "top": 145.375,
+                "width": 200,
+                "x": 477,
+                "y": 145.375
+            },
+            "post_job_actions": {
+                "HideDatasetActionget_seqs_hap": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "get_seqs_hap"
+                },
+                "HideDatasetActionget_seqs_purged": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "get_seqs_purged"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/purge_dups/purge_dups/1.2.5+galaxy4",
+            "tool_shed_repository": {
+                "changeset_revision": "a315c25dc813",
+                "name": "purge_dups",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"function_select\": {\"functions\": \"get_seqs\", \"__current_case__\": 5, \"fasta_input\": {\"__class__\": \"RuntimeValue\"}, \"bed_input\": {\"__class__\": \"RuntimeValue\"}, \"advanced_options\": {\"coverage\": \"false\", \"haplotigs\": \"false\", \"length\": {\"__class__\": \"ConnectedValue\"}, \"min_ratio\": {\"__class__\": \"ConnectedValue\"}, \"end_trim\": \"true\", \"split\": \"false\", \"min_gap\": {\"__class__\": \"ConnectedValue\"}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.5+galaxy4",
+            "type": "tool",
+            "uuid": "5cbbf5d3-53b4-4813-a7f1-4b00e2a58dd2",
+            "workflow_outputs": []
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/2.0",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "fasta": {
+                    "id": 15,
+                    "output_name": "get_seqs_hap"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Fasta Statistics",
+            "outputs": [
+                {
+                    "name": "stats_output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 348.71875,
+                "height": 154.34375,
+                "left": 755,
+                "right": 955,
+                "top": 194.375,
+                "width": 200,
+                "x": 755,
+                "y": 194.375
+            },
+            "post_job_actions": {
+                "HideDatasetActionstats_output": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "stats_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "0dbb995c7d35",
+                "name": "fasta_stats",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__current_case__\": \"0\", \"coverage\": {\"__class__\": \"ConnectedValue\"}, \"cutoffs\": {\"__class__\": \"ConnectedValue\"}, \"double_chain\": {\"__current_case__\": 1, \"chaining_rounds\": \"one\"}, \"fasta\": {\"__class__\": \"ConnectedValue\"}, \"functions\": \"purge_dups\", \"gaps_option\": \"false\", \"genome_size\": null, \"input\": {\"__class__\": \"ConnectedValue\"}, \"log_file\": \"false\", \"max_extend\": \"15000\", \"max_gap\": \"20000\", \"min_align\": \"300\", \"min_bad\": \"1.0\", \"min_chain\": \"789\", \"min_chain_score\": \"10000\", \"min_match\": \"500\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0",
+            "type": "tool",
+            "uuid": "37dbd3da-74d0-4e99-9311-a796d730e341",
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/2.0",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "fasta": {
+                    "id": 15,
+                    "output_name": "get_seqs_purged"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Fasta Statistics",
+                    "name": "fasta"
+                }
+            ],
+            "label": null,
+            "name": "Fasta Statistics",
+            "outputs": [
+                {
+                    "name": "stats_output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 519.71875,
+                "height": 154.34375,
+                "left": 1033,
+                "right": 1233,
+                "top": 365.375,
+                "width": 200,
+                "x": 1033,
+                "y": 365.375
+            },
+            "post_job_actions": {
+                "HideDatasetActionstats_output": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "stats_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "0dbb995c7d35",
+                "name": "fasta_stats",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fasta\": {\"__class__\": \"RuntimeValue\"}, \"gaps_option\": \"false\", \"genome_size\": \"12792715\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0",
+            "type": "tool",
+            "uuid": "e5d02e31-de2a-4f4a-a13d-a19bef647785",
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "input": {
+                    "id": 16,
+                    "output_name": "stats_output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 327.9375,
+                "height": 113.5625,
+                "left": 1033,
+                "right": 1233,
+                "top": 214.375,
+                "width": 200,
+                "x": 1033,
+                "y": 214.375
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"list\": \"2\"}, \"delimiter\": \"\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "4b1c04fb-46b3-43ea-8f88-5857ebe9b7b2",
+            "workflow_outputs": []
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "input1": {
+                    "id": 17,
+                    "output_name": "stats_output"
+                },
+                "input2": {
+                    "id": 18,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Assembly_stats.tabular",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 398.71875,
+                "height": 164.34375,
+                "left": 1311,
+                "right": 1511,
+                "top": 234.375,
+                "width": 200,
+                "x": 1311,
+                "y": 234.375
+            },
+            "post_job_actions": {},
+            "tool_id": "Paste1",
+            "tool_state": "{\"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "5d996cc4-849a-43a3-a962-328887a86fd0",
+            "workflow_outputs": [
+                {
+                    "label": "Stats assembly",
+                    "output_name": "out_file1",
+                    "uuid": "7ec95db1-ed9d-4e50-98f7-4b8b9982fed7"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "7b25b423-2a6f-4e66-81ca-e6947db64066",
+    "version": 2
+}
