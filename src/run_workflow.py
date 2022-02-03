@@ -67,7 +67,8 @@ def main():
             else:
                 range_values = [round(x,2) for x in ls(min,max,N)]
             for i in range(len(parameters)):
-                if param in parameters[i]: 
+                p = parameters[i].split(":")[0]
+                if param == p:
                     pindex = i; break
             for value in range_values:
                 temporal_value = value_format.format(param,value)
@@ -85,6 +86,5 @@ def main():
         p.start()
         sleep(0.5)
     for p in processes: p.join()
-
 if __name__ == "__main__":
     main()

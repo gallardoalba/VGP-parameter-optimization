@@ -14,7 +14,11 @@ def main():
     for parameter in parameters:
         values = []
         database = pd.DataFrame()
-        pfolder = sorted([x for x in folders if parameter in x])
+        pfolder = []
+        for i in folders:
+            tmp = "_".join(i.split("_")[:-1])
+            if parameter == tmp: pfolder.append(i)
+        pfolder = sorted(pfolder)
         sfiles = [path.join(OUTPUT_FOLDER,x + "/" + stats_name) for x in pfolder]
         for i,f in enumerate(sfiles):
             option = f.split("/")[2].split("_")[-1]
