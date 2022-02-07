@@ -8,11 +8,12 @@ from time import sleep
 from numpy import linspace as ls
 
 
-WORKFLOW = "../data/purgedups_partial_pipeline_no_FASTA.ga"
-PARAMETERS = "../data/partial_default_inputs.yml"
+WORKFLOW = "../data/purgedups_full_pipeline.ga"
+PARAMETERS = "../data/full_workflow_inputs.yml"
 CONFIG_FILE = "../data/config.csv"
 OUTPUT_FOLDER = "../outputs/"
-CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {}  --output_directory {}'
+#CMMD = 'planemo run {} {} --download_outputs --profile EU --history_name {}  --output_directory {} --no_wait'
+CMMD = 'planemo run {} {} --profile EU --history_name {} --no_wait'
 QUEUE = []
 N = 40
 
@@ -26,20 +27,22 @@ def launch_planemo(RUN,LOG,SEMA):
 def generate_COMMANDS(temporal_files,LOG):    
     for temporal_file in temporal_files:
         HISTORY_NAME = temporal_file.split("/")[-1][:-4]
-        OUTPUT_PATH = "../outputs/{}/".format(HISTORY_NAME)
-        if not path.isdir(OUTPUT_PATH):
-            makedirs(OUTPUT_PATH)
-        files = [path.join(OUTPUT_PATH,x) for x in listdir(OUTPUT_PATH)]
-        CMMD_RUN = CMMD.format(WORKFLOW,temporal_file,HISTORY_NAME,OUTPUT_PATH)
+#        OUTPUT_PATH = "../outputs/{}/".format(HISTORY_NAME)
+#        if not path.isdir(OUTPUT_PATH):
+#            makedirs(OUTPUT_PATH)
+#        files = [path.join(OUTPUT_PATH,x) for x in listdir(OUTPUT_PATH)]
+#        CMMD_RUN = CMMD.format(WORKFLOW,temporal_file,HISTORY_NAME,OUTPUT_PATH)
+        CMMD_RUN = CMMD.format(WORKFLOW,temporal_file,HISTORY_NAME)
         CMMD_RUN = [x for x in CMMD_RUN.split(" ") if x != ""]
+        QUEUE.append(CMMD_RUN)
         #print(len(files))
-        if len(files) == 0:    
-            QUEUE.append(CMMD_RUN)
-        if files:          
-            for f in files:
-                size = path.getsize(f)
-                if size < 800:
-                    QUEUE.append(CMMD_RUN)
+#        if len(files) == 0:    
+#            QUEUE.append(CMMD_RUN)
+#        if files:          
+#            for f in files:
+#                size = path.getsize(f)
+#                if size < 800:
+#                    QUEUE.append(CMMD_RUN)
     print("\n\n[x] {} workflows will be launched...".format(len(QUEUE)))
     sleep(2)
     return(QUEUE)
@@ -73,11 +76,15 @@ def main():
             for value in range_values:
                 temporal_value = value_format.format(param,value)
                 parameters_temporal[pindex] = temporal_value
-                parameters_RUN = "".join(parameters_temporal)
+                pafuera = parameters_temporal[:]
+                pafuera = [x for x in pafuera if "-" not in x]
+                parameters_RUN = "".join(pafuera)
+                print(parameters_RUN)
                 OUTPUT_FILE = "/tmp/{}_{}.yml".format(param,value)
                 open(OUTPUT_FILE,"w").write(parameters_RUN)
                 temporal_files.append(OUTPUT_FILE)
-    CMMDS = generate_COMMANDS(temporal_files,LOG)
+    CMMDS = generate_COMMANDS(temporal_files,LOG)[:2]
+    for i in CMMDS: print(i)
     nThreads = 100
     sema = Semaphore(nThreads)
     processes = [Process(target=launch_planemo, args=(CMMD, LOG, sema)) for CMMD in CMMDS]

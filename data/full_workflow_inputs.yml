@@ -1,0 +1,14 @@
+HiFi_collapsed.fastqsanger.gz:
+  class: File
+  galaxy_id: 11ac94870d0bb33a4400f78633ab97b5
+assembly.fasta:
+  class: File
+  galaxy_id: 11ac94870d0bb33a629f0319534f4acd
+flank: 0
+low_depth: -
+max_cov: 0
+min_depth: 0
+min_map_qual: -
+min_map_ratio: 0
+transition: -
+upper_depth: -
