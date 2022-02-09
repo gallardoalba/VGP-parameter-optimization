@@ -78,13 +78,12 @@ def main():
                 parameters_temporal[pindex] = temporal_value
                 pafuera = parameters_temporal[:]
                 pafuera = [x for x in pafuera if "-" not in x]
-                parameters_RUN = "".join(pafuera)
-                print(parameters_RUN)
+                parameters_RUN = ("".join(pafuera)).strip()
                 OUTPUT_FILE = "/tmp/{}_{}.yml".format(param,value)
                 open(OUTPUT_FILE,"w").write(parameters_RUN)
                 temporal_files.append(OUTPUT_FILE)
-    CMMDS = generate_COMMANDS(temporal_files,LOG)[:2]
-    for i in CMMDS: print(i)
+    CMMDS = generate_COMMANDS(temporal_files,LOG)[:4]
+    for i in CMMDS: print(" ".join(i))
     nThreads = 100
     sema = Semaphore(nThreads)
     processes = [Process(target=launch_planemo, args=(CMMD, LOG, sema)) for CMMD in CMMDS]

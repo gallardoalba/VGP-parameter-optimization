@@ -1,9 +1,9 @@
 option,type,default,min,max
 flank,int,0,0,300
-low_depth,int,-,0,300
+low_depth,int,300,0,300
 max_cov,int,500,0,1000
 min_depth,float,0.1,0,1
-min_map_qual,int,-,0,50
+min_map_qual,int,50,0,50
 min_map_ratio,float,0,0,1
-transition,int,-,0,1000
-upper_depth,int,-,0,1000
+transition,int,23,0,1000
+upper_depth,int,63,0,1000

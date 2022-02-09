@@ -1,0 +1,17 @@
+assembly.fasta:
+  class: File
+  path: todo_test_data_path.ext
+flank: todo_param_value
+max_cov: todo_param_value
+min_depth: todo_param_value
+min_map_ratio: todo_param_value
+reads_mapped_assembly:
+  class: Collection
+  collection_type: list
+  elements:
+  - class: File
+    identifier: todo_element_name
+    path: todo_test_data_path.ext
+self_mapping:
+  class: File
+  path: todo_test_data_path.ext

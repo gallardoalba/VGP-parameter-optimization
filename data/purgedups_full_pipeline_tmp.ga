@@ -13,170 +13,10 @@
     "name": "VGP optimization purge_dups full",
     "steps": {
         "0": {
-            "annotation": "HiFi reads mapped to assembly",
-            "content_id": null,
-            "errors": null,
-            "id": 0,
-            "input_connections": {},
-            "inputs": [
-                {
-                    "description": "HiFi reads mapped to assembly",
-                    "name": "reads_mapped_assembly"
-                }
-            ],
-            "label": "reads_mapped_assembly",
-            "name": "Input dataset collection",
-            "outputs": [],
-            "position": {
-                "bottom": 149.265625,
-                "height": 82.171875,
-                "left": 354,
-                "right": 554,
-                "top": 67.09375,
-                "width": 200,
-                "x": 354,
-                "y": 67.09375
-            },
-            "tool_id": null,
-            "tool_state": "{\"optional\": false, \"collection_type\": \"list\"}",
-            "tool_version": null,
-            "type": "data_collection_input",
-            "uuid": "a0d4a0fb-3a9b-4efb-92c7-2b2c929b1cd4",
-            "workflow_outputs": []
-        },
-        "1": {
-            "annotation": "Max coverage",
-            "content_id": null,
-            "errors": null,
-            "id": 1,
-            "input_connections": {},
-            "inputs": [
-                {
-                    "description": "Max coverage",
-                    "name": "max_cov"
-                }
-            ],
-            "label": "max_cov",
-            "name": "Input parameter",
-            "outputs": [],
-            "position": {
-                "bottom": 245.1875,
-                "height": 61.78125,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": 183.40625,
-                "width": 200,
-                "x": 376.109375,
-                "y": 183.40625
-            },
-            "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
-            "tool_version": null,
-            "type": "parameter_input",
-            "uuid": "67392e07-680c-4cba-9711-6cf9bf0a75d1",
-            "workflow_outputs": []
-        },
-        "2": {
-            "annotation": "Upper coverage",
-            "content_id": null,
-            "errors": null,
-            "id": 2,
-            "input_connections": {},
-            "inputs": [
-                {
-                    "description": "Upper coverage",
-                    "name": "upper_depth"
-                }
-            ],
-            "label": "upper_depth",
-            "name": "Input parameter",
-            "outputs": [],
-            "position": {
-                "bottom": -138.4375,
-                "height": 82.171875,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": -220.609375,
-                "width": 200,
-                "x": 376.109375,
-                "y": -220.609375
-            },
-            "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": true}",
-            "tool_version": null,
-            "type": "parameter_input",
-            "uuid": "6bca2ba7-9ba1-4801-ba8e-95769d0478d4",
-            "workflow_outputs": []
-        },
-        "3": {
-            "annotation": "Min mapping ratio",
-            "content_id": null,
-            "errors": null,
-            "id": 3,
-            "input_connections": {},
-            "inputs": [
-                {
-                    "description": "Min mapping ratio",
-                    "name": "min_map_ratio"
-                }
-            ],
-            "label": "min_map_ratio",
-            "name": "Input parameter",
-            "outputs": [],
-            "position": {
-                "bottom": 365.578125,
-                "height": 82.171875,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": 283.40625,
-                "width": 200,
-                "x": 376.109375,
-                "y": 283.40625
-            },
-            "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"float\", \"optional\": false}",
-            "tool_version": null,
-            "type": "parameter_input",
-            "uuid": "01c027d1-f89f-4c48-972c-9b0d895c10d1",
-            "workflow_outputs": []
-        },
-        "4": {
-            "annotation": "Min mapping qual",
-            "content_id": null,
-            "errors": null,
-            "id": 4,
-            "input_connections": {},
-            "inputs": [
-                {
-                    "description": "Min mapping qual",
-                    "name": "min_map_qual"
-                }
-            ],
-            "label": "min_map_qual",
-            "name": "Input parameter",
-            "outputs": [],
-            "position": {
-                "bottom": 480.0625,
-                "height": 82.171875,
-                "left": 391.15625,
-                "right": 591.15625,
-                "top": 397.890625,
-                "width": 200,
-                "x": 391.15625,
-                "y": 397.890625
-            },
-            "tool_id": null,
-            "tool_state": "{\"default\": 0, \"parameter_type\": \"integer\", \"optional\": true}",
-            "tool_version": null,
-            "type": "parameter_input",
-            "uuid": "7aab6e08-157e-4ca0-87ae-b380ab499302",
-            "workflow_outputs": []
-        },
-        "5": {
             "annotation": "Flank",
             "content_id": null,
             "errors": null,
-            "id": 5,
+            "id": 0,
             "input_connections": {},
             "inputs": [
                 {
@@ -188,14 +28,14 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 585.1875,
+                "bottom": 200.03125,
                 "height": 61.78125,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": 523.40625,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 138.25,
                 "width": 200,
-                "x": 376.109375,
-                "y": 523.40625
+                "x": 428.765625,
+                "y": 138.25
             },
             "tool_id": null,
             "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
@@ -204,11 +44,81 @@
             "uuid": "41264504-2689-4421-8adc-f382e4149cf5",
             "workflow_outputs": []
         },
-        "6": {
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "reads_mapped_assembly"
+                }
+            ],
+            "label": "reads_mapped_assembly",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 327.5625,
+                "height": 82.171875,
+                "left": 430.765625,
+                "right": 630.765625,
+                "top": 245.390625,
+                "width": 200,
+                "x": 430.765625,
+                "y": 245.390625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "e0ae1bba-9bb0-4ea6-a6e5-09fe039b4a9a",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "3d0ad24e-b2b7-47bc-9ec4-891b1e7cee70"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "Max coverage",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Max coverage",
+                    "name": "max_cov"
+                }
+            ],
+            "label": "max_cov",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 420.03125,
+                "height": 61.78125,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 358.25,
+                "width": 200,
+                "x": 428.765625,
+                "y": 358.25
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "67392e07-680c-4cba-9711-6cf9bf0a75d1",
+            "workflow_outputs": []
+        },
+        "3": {
             "annotation": "Min depth",
             "content_id": null,
             "errors": null,
-            "id": 6,
+            "id": 3,
             "input_connections": {},
             "inputs": [
                 {
@@ -220,14 +130,14 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 685.1875,
+                "bottom": 520.046875,
                 "height": 61.78125,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": 623.40625,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 458.265625,
                 "width": 200,
-                "x": 376.109375,
-                "y": 623.40625
+                "x": 428.765625,
+                "y": 458.265625
             },
             "tool_id": null,
             "tool_state": "{\"parameter_type\": \"float\", \"optional\": false}",
@@ -236,11 +146,11 @@
             "uuid": "21d31e85-64a4-4ce6-a631-4118443c3419",
             "workflow_outputs": []
         },
-        "7": {
+        "4": {
             "annotation": "Low depth",
             "content_id": null,
             "errors": null,
-            "id": 7,
+            "id": 4,
             "input_connections": {},
             "inputs": [
                 {
@@ -252,27 +162,27 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 785.1875,
+                "bottom": 620.046875,
                 "height": 61.78125,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": 723.40625,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 558.265625,
                 "width": 200,
-                "x": 376.109375,
-                "y": 723.40625
+                "x": 428.765625,
+                "y": 558.265625
             },
             "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
             "tool_version": null,
             "type": "parameter_input",
             "uuid": "9fc671cc-cfba-4f7e-b167-bba6b8832ff0",
             "workflow_outputs": []
         },
-        "8": {
+        "5": {
             "annotation": "Transition",
             "content_id": null,
             "errors": null,
-            "id": 8,
+            "id": 5,
             "input_connections": {},
             "inputs": [
                 {
@@ -284,20 +194,116 @@
             "name": "Input parameter",
             "outputs": [],
             "position": {
-                "bottom": 885.1875,
+                "bottom": 720.046875,
                 "height": 61.78125,
-                "left": 376.109375,
-                "right": 576.109375,
-                "top": 823.40625,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 658.265625,
                 "width": 200,
-                "x": 376.109375,
-                "y": 823.40625
+                "x": 428.765625,
+                "y": 658.265625
             },
             "tool_id": null,
-            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
             "tool_version": null,
             "type": "parameter_input",
             "uuid": "22b0a04c-bc0a-4b24-966b-df57fdfd598d",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "Upper coverage",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Upper coverage",
+                    "name": "upper_depth"
+                }
+            ],
+            "label": "upper_depth",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 840.4375,
+                "height": 82.171875,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 758.265625,
+                "width": 200,
+                "x": 428.765625,
+                "y": 758.265625
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "6bca2ba7-9ba1-4801-ba8e-95769d0478d4",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "Min mapping ratio",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Min mapping ratio",
+                    "name": "min_map_ratio"
+                }
+            ],
+            "label": "min_map_ratio",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 960.4375,
+                "height": 82.171875,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 878.265625,
+                "width": 200,
+                "x": 428.765625,
+                "y": 878.265625
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "01c027d1-f89f-4c48-972c-9b0d895c10d1",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "Min mapping qual",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Min mapping qual",
+                    "name": "min_map_qual"
+                }
+            ],
+            "label": "min_map_qual",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 1080.4375,
+                "height": 82.171875,
+                "left": 428.765625,
+                "right": 628.765625,
+                "top": 998.265625,
+                "width": 200,
+                "x": 428.765625,
+                "y": 998.265625
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "7aab6e08-157e-4ca0-87ae-b380ab499302",
             "workflow_outputs": []
         },
         "9": {
@@ -316,14 +322,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 936.765625,
+                "bottom": 1025.4375,
                 "height": 82.171875,
-                "left": 681.609375,
-                "right": 881.609375,
-                "top": 854.59375,
+                "left": 726.765625,
+                "right": 926.765625,
+                "top": 943.265625,
                 "width": 200,
-                "x": 681.609375,
-                "y": 854.59375
+                "x": 726.765625,
+                "y": 943.265625
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false, \"format\": [\"paf\"]}",
@@ -348,14 +354,14 @@
             "name": "Input dataset",
             "outputs": [],
             "position": {
-                "bottom": 1425.109375,
+                "bottom": 924.4375,
                 "height": 82.171875,
-                "left": 504.109375,
-                "right": 704.109375,
-                "top": 1342.9375,
+                "left": 1004.765625,
+                "right": 1204.765625,
+                "top": 842.265625,
                 "width": 200,
-                "x": 504.109375,
-                "y": 1342.9375
+                "x": 1004.765625,
+                "y": 842.265625
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false}",
@@ -371,39 +377,39 @@
             "id": 11,
             "input_connections": {
                 "function_select|input": {
-                    "id": 0,
-                    "output_name": "output"
-                },
-                "function_select|pbcstat_options|flank": {
-                    "id": 5,
-                    "output_name": "output"
-                },
-                "function_select|pbcstat_options|max_cov": {
                     "id": 1,
                     "output_name": "output"
                 },
+                "function_select|pbcstat_options|flank": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "function_select|pbcstat_options|max_cov": {
+                    "id": 2,
+                    "output_name": "output"
+                },
                 "function_select|pbcstat_options|min_map_qual": {
-                    "id": 4,
-                    "output_name": "output"
-                },
-                "function_select|pbcstat_options|min_map_ratio": {
-                    "id": 3,
-                    "output_name": "output"
-                },
-                "function_select|section_calcuts|low_depth": {
-                    "id": 7,
-                    "output_name": "output"
-                },
-                "function_select|section_calcuts|min_depth": {
-                    "id": 6,
-                    "output_name": "output"
-                },
-                "function_select|section_calcuts|transition": {
                     "id": 8,
                     "output_name": "output"
                 },
+                "function_select|pbcstat_options|min_map_ratio": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "function_select|section_calcuts|low_depth": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "function_select|section_calcuts|min_depth": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "function_select|section_calcuts|transition": {
+                    "id": 5,
+                    "output_name": "output"
+                },
                 "function_select|section_calcuts|upper_depth": {
-                    "id": 2,
+                    "id": 6,
                     "output_name": "output"
                 }
             },
@@ -421,14 +427,14 @@
                 }
             ],
             "position": {
-                "bottom": 793.171875,
+                "bottom": 905.015625,
                 "height": 631.765625,
-                "left": 684.15625,
-                "right": 884.15625,
-                "top": 161.40625,
+                "left": 726.765625,
+                "right": 926.765625,
+                "top": 273.25,
                 "width": 200,
-                "x": 684.15625,
-                "y": 161.40625
+                "x": 726.765625,
+                "y": 273.25
             },
             "post_job_actions": {
                 "HideDatasetActioncalcuts_cutoff": {
@@ -449,7 +455,7 @@
                 "owner": "iuc",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"function_select\": {\"functions\": \"pbcstat\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}, \"pbcstat_options\": {\"max_cov\": {\"__class__\": \"ConnectedValue\"}, \"min_map_ratio\": {\"__class__\": \"ConnectedValue\"}, \"min_map_qual\": {\"__class__\": \"ConnectedValue\"}, \"flank\": {\"__class__\": \"ConnectedValue\"}, \"primary_alignments\": \"true\"}, \"section_calcuts\": {\"min_depth\": {\"__class__\": \"ConnectedValue\"}, \"low_depth\": {\"__class__\": \"ConnectedValue\"}, \"transition\": {\"__class__\": \"ConnectedValue\"}, \"upper_depth\": {\"__class__\": \"ConnectedValue\"}, \"ploidy\": \"-d 1\"}, \"section_hist\": {\"ymin\": null, \"ymax\": null, \"xmin\": null, \"xmax\": null, \"title\": \"Read depth histogram plot\"}, \"output_options\": [\"pbcstat_coverage\", \"calcuts_cutoff\"]}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"function_select\": {\"functions\": \"pbcstat\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}, \"pbcstat_options\": {\"max_cov\": {\"__class__\": \"ConnectedValue\"}, \"min_map_ratio\": {\"__class__\": \"ConnectedValue\"}, \"min_map_qual\": {\"__class__\": \"ConnectedValue\"}, \"flank\": {\"__class__\": \"ConnectedValue\"}, \"primary_alignments\": {\"__class__\": \"RuntimeValue\"}}, \"section_calcuts\": {\"min_depth\": {\"__class__\": \"ConnectedValue\"}, \"low_depth\": {\"__class__\": \"ConnectedValue\"}, \"transition\": {\"__class__\": \"ConnectedValue\"}, \"upper_depth\": {\"__class__\": \"ConnectedValue\"}, \"ploidy\": \"-d 1\"}, \"section_hist\": {\"ymin\": null, \"ymax\": null, \"xmin\": null, \"xmax\": null, \"title\": \"Read depth histogram plot\"}, \"output_options\": [\"pbcstat_coverage\", \"calcuts_cutoff\"]}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "1.2.5+galaxy4",
             "type": "tool",
             "uuid": "918f9b27-f160-4511-8827-e939cdee31ed",
@@ -484,14 +490,14 @@
                 }
             ],
             "position": {
-                "bottom": 1003.53125,
+                "bottom": 804.390625,
                 "height": 215.125,
-                "left": 972.140625,
-                "right": 1172.140625,
-                "top": 788.40625,
+                "left": 1004.765625,
+                "right": 1204.765625,
+                "top": 589.265625,
                 "width": 200,
-                "x": 972.140625,
-                "y": 788.40625
+                "x": 1004.765625,
+                "y": 589.265625
             },
             "post_job_actions": {
                 "HideDatasetActionpurge_dups_bed": {
@@ -542,14 +548,14 @@
                 }
             ],
             "position": {
-                "bottom": 1244.09375,
+                "bottom": 923.953125,
                 "height": 296.6875,
-                "left": 1250.109375,
-                "right": 1450.109375,
-                "top": 947.40625,
+                "left": 1282.765625,
+                "right": 1482.765625,
+                "top": 627.265625,
                 "width": 200,
-                "x": 1250.109375,
-                "y": 947.40625
+                "x": 1282.765625,
+                "y": 627.265625
             },
             "post_job_actions": {
                 "HideDatasetActionget_seqs_hap": {
@@ -597,14 +603,14 @@
                 }
             ],
             "position": {
-                "bottom": 1202.75,
+                "bottom": 882.609375,
                 "height": 154.34375,
-                "left": 1528.125,
-                "right": 1728.125,
-                "top": 1048.40625,
+                "left": 1560.765625,
+                "right": 1760.765625,
+                "top": 728.265625,
                 "width": 200,
-                "x": 1528.125,
-                "y": 1048.40625
+                "x": 1560.765625,
+                "y": 728.265625
             },
             "post_job_actions": {},
             "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/2.0",
@@ -622,7 +628,7 @@
                 {
                     "label": "Fasta Statistics on input dataset(s): summary stats",
                     "output_name": "stats_output",
-                    "uuid": "93ca3fb8-b7a9-4553-8196-347be673cf92"
+                    "uuid": "2cd561cf-487d-4a44-806a-59d5a9701fcd"
                 }
             ]
         }
@@ -631,6 +637,6 @@
         "name:purge_dups",
         "name:optimization"
     ],
-    "uuid": "bbfd8838-9e5e-4d8a-8631-89b66dd862de",
+    "uuid": "ae55f877-2c5e-4cf1-ad1f-c93611c244a8",
     "version": 1
 }
